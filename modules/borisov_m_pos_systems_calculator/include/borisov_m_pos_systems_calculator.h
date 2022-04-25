@@ -33,7 +33,7 @@ class calculator {
   int operator*(const std::string& rhs);
 
  private:
-  std::string num_;
+  std::string lhs_value_;
 };
 
 #endif  // MODULES_BORISOV_M_POS_SYSTEMS_CALCULATOR_INCLUDE_BORISOV_M_POS_SYSTEMS_CALCULATOR_H_

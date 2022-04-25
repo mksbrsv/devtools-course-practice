@@ -50,29 +50,29 @@ bool converter::is_oct(const std::string& num) {
   return true;
 }
 
-calculator::calculator() : num_("") {}
+calculator::calculator() : lhs_value_("") {}
 
-calculator::calculator(const std::string& num) : num_(num) {}
+calculator::calculator(const std::string& num) : lhs_value_(num) {}
 
 calculator& calculator::operator=(const calculator& calc) {
-  if (this != &calc) num_ = calc.num_;
+  if (this != &calc) lhs_value_ = calc.lhs_value_;
   return *this;
 }
 
 calculator& calculator::operator=(const std::string& num) {
-  num_ = num;
+  lhs_value_ = num;
   return *this;
 }
 
 int calculator::operator+(const std::string& num) {
-  return converter::convert(num_) + converter::convert(num);
+  return converter::convert(lhs_value_) + converter::convert(num);
 }
 int calculator::operator-(const std::string& num) {
-  return converter::convert(num_) - converter::convert(num);
+  return converter::convert(lhs_value_) - converter::convert(num);
 }
 int calculator::operator/(const std::string& num) {
-  return converter::convert(num_) / converter::convert(num);
+  return converter::convert(lhs_value_) / converter::convert(num);
 }
 int calculator::operator*(const std::string& num) {
-  return converter::convert(num_) * converter::convert(num);
+  return converter::convert(lhs_value_) * converter::convert(num);
 }
