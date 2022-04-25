@@ -8,26 +8,26 @@
 #include "include/borisov_m_pos_systems_calculator.h"
 
 TEST(borisov_lab2, test_can_convert_bin) {
-  std::string test = "1010101";
-  int result = converter::convert(test);
+  std::string test_string = "1010101";
+  int result = converter::convert(test_string);
   EXPECT_EQ(result, 85);
 }
 
 TEST(borisov_lab2, test_can_convert_oct) {
-  std::string test = "2345";
-  int result = converter::convert(test);
+  std::string test_string = "2345";
+  int result = converter::convert(test_string);
   EXPECT_EQ(result, 1253);
 }
 
 TEST(borisov_lab2, test_can_convert_hex) {
-  std::string test = "0xa23e2";
-  int result = converter::convert(test);
+  std::string test_string = "0xa23e2";
+  int result = converter::convert(test_string);
   EXPECT_EQ(result, 664546);
 }
 
 TEST(borisov_lab2, test_returns_zero_if_bad_value) {
-  std::string test = "hjkl";
-  int result = converter::convert(test);
+  std::string test_string = "hjkl";
+  int result = converter::convert(test_string);
   EXPECT_EQ(result, 0);
 }
 
