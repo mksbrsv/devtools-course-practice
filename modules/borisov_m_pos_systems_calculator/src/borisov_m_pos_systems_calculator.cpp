@@ -3,6 +3,7 @@
 #include "include/borisov_m_pos_systems_calculator.h"
 
 #include <cstdlib>
+#include <string>
 
 int converter::convert(const std::string& num) {
   if (num.find("0x") != std::string::npos)

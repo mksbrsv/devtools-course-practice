@@ -3,6 +3,7 @@
 #include <gtest/gtest.h>
 
 #include <iostream>
+#include <string>
 
 #include "include/borisov_m_pos_systems_calculator.h"
 
