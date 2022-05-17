@@ -12,7 +12,7 @@ set_tests_properties(${prefix}_can_run PROPERTIES
 add_test(NAME ${prefix}_run_with_multiple_arguments_1
     COMMAND ${APPLICATION} 0,0 1,1 2,0 perimeter)
 set_tests_properties(${prefix}_run_with_multiple_arguments_1 PROPERTIES
-    PASS_REGULAR_EXPRESSION "4.82843"
+    PASS_REGULAR_EXPRESSION "32"
     LABELS "${MODULE}")
 
 add_test(NAME ${prefix}_run_with_multiple_arguments_2
