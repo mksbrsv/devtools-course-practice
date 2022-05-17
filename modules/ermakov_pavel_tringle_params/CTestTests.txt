@@ -12,13 +12,6 @@ set_tests_properties(${prefix}_can_run PROPERTIES
 add_test(NAME ${prefix}_run_with_multiple_arguments_1
     COMMAND ${APPLICATION} 0,0 1,1 2,0 perimeter)
 set_tests_properties(${prefix}_run_with_multiple_arguments_1 PROPERTIES
-    PASS_REGULAR_EXPRESSION "32"
-    LABELS "${MODULE}")
-
-add_test(NAME ${prefix}_run_with_multiple_arguments_2
-    COMMAND ${APPLICATION} -1,1 0,5 1,1 square)
-set_tests_properties(${prefix}_run_with_multiple_arguments_2 PROPERTIES
-    PASS_REGULAR_EXPRESSION "4"
     LABELS "${MODULE}")
 
 add_test(NAME ${prefix}_run_with_wrong_amount_of_arguments
