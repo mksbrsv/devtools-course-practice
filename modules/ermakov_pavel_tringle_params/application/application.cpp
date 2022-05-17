@@ -7,3 +7,4 @@ int main(int argc, char** argv) {
   std::string output = app(argc, argv);
   printf("%s\n", output.c_str());
 }
+

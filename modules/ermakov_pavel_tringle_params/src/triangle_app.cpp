@@ -53,3 +53,4 @@ application::arguments application::parse_args(int argc, char** argv) {
   if (argc > 5) args.side = std::stoi(argv[5]);
   return args;
 }
+
