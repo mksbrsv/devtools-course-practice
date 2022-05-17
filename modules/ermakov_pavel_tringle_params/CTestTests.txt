@@ -12,7 +12,7 @@ set_tests_properties(${prefix}_can_run PROPERTIES
 add_test(NAME ${prefix}_run_with_multiple_arguments
     COMMAND ${APPLICATION} 0,0 1,1 2,0 perimeter)
 set_tests_properties(${prefix}_run_with_multiple_arguments PROPERTIES
-    PASS_REGULAR_EXPRESSION "4.82843"
+    PASS_REGULAR_EXPRESSION "4.828427"
     LABELS "${MODULE}")
 
 add_test(NAME ${prefix}_run_with_wrong_amount_of_arguments
@@ -24,7 +24,7 @@ set_tests_properties(${prefix}_run_with_wrong_amount_of_arguments PROPERTIES
 add_test(NAME ${prefix}_can_find_perimeter
     COMMAND ${APPLICATION} 0,0 1,1 2,0 perimeter)
 set_tests_properties(${prefix}_can_find_perimeter PROPERTIES
-    PASS_REGULAR_EXPRESSION "4.82843"
+    PASS_REGULAR_EXPRESSION "4.828427"
     LABELS "${MODULE}")
 
 add_test(NAME ${prefix}_can_find_square
