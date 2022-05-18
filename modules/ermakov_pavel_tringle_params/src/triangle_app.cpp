@@ -13,6 +13,9 @@ std::string application::operator()(int argc, char** argv) {
   if (argc == 1) {
     return help(argv[0]);
   }
+  if (argc < 5) {
+    return "Error: too few arguments";
+  }
   if (argc > 6) {
     return "Error: too many arguments";
   }
@@ -53,4 +56,3 @@ application::arguments application::parse_args(int argc, char** argv) {
   if (argc > 5) args.side = std::stoi(argv[5]);
   return args;
 }
-

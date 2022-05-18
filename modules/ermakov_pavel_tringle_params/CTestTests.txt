@@ -9,16 +9,28 @@ add_test(NAME ${prefix}_can_run
 set_tests_properties(${prefix}_can_run PROPERTIES
     LABELS "${MODULE}")
 
+add_test(NAME ${prefix}_print_help
+    COMMAND ${APPLICATION})
+set_tests_properties (${prefix}_print_help PROPERTIES
+    PASS_REGULAR_EXPRESSION "This is an application to demonstrate "
+    LABELS "${MODULE}")
+
 add_test(NAME ${prefix}_run_with_multiple_arguments
     COMMAND ${APPLICATION} 0,0 1,1 2,0 perimeter)
 set_tests_properties(${prefix}_run_with_multiple_arguments PROPERTIES
     PASS_REGULAR_EXPRESSION "4.828427"
     LABELS "${MODULE}")
 
-add_test(NAME ${prefix}_run_with_wrong_amount_of_arguments
+add_test(NAME ${prefix}_run_with_wrong_amount_of_arguments_1
     COMMAND ${APPLICATION} 0,0 0,0 0,0 s 5 1)
-set_tests_properties(${prefix}_run_with_wrong_amount_of_arguments PROPERTIES
+set_tests_properties(${prefix}_run_with_wrong_amount_of_arguments_1 PROPERTIES
     PASS_REGULAR_EXPRESSION "Error: too many arguments"
+    LABELS "${MODULE}")
+
+add_test(NAME ${prefix}_run_with_wrong_amount_of_arguments_2
+    COMMAND ${APPLICATION} 0,0 0,0 0,0)
+set_tests_properties(${prefix}_run_with_wrong_amount_of_arguments_2 PROPERTIES
+    PASS_REGULAR_EXPRESSION "Error: too few arguments"
     LABELS "${MODULE}")
 
 add_test(NAME ${prefix}_can_find_perimeter
