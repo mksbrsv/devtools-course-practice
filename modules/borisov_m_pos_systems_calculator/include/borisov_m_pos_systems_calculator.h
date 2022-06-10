@@ -11,14 +11,14 @@ class converter {
 
  public:
   static int convert(const std::string& num);
-
- private:
   static int convert_hex(const std::string& num);
   static int convert_bin(const std::string& num);
   static int convert_oct(const std::string& num);
   static bool is_hex(const std::string& num);
   static bool is_bin(const std::string& num);
   static bool is_oct(const std::string& num);
+
+ private:
 };
 
 class calculator {
@@ -31,6 +31,8 @@ class calculator {
   int operator-(const std::string& rhs);
   int operator/(const std::string& rhs);
   int operator*(const std::string& rhs);
+
+  std::string get_value() const;
 
  private:
   std::string lhs_value_;

@@ -76,3 +76,4 @@ int calculator::operator/(const std::string& num) {
 int calculator::operator*(const std::string& num) {
   return converter::convert(lhs_value_) * converter::convert(num);
 }
+std::string calculator::get_value() const { return lhs_value_; }

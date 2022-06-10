@@ -7,6 +7,46 @@
 
 #include "include/borisov_m_pos_systems_calculator.h"
 
+TEST(borisov_lab2, test_check_is_hex) {
+  std::string test_string = ("a23e2");
+  bool result = converter::is_hex(test_string);
+  ASSERT_TRUE(result);
+}
+
+TEST(borisov_lab2, test_check_is_bin) {
+  std::string test_string = ("1010101");
+  bool result = converter::is_bin(test_string);
+  ASSERT_TRUE(result);
+}
+
+TEST(borisov_lab2, test_check_is_oct) {
+  std::string test_string = ("2345");
+  bool result = converter::is_oct(test_string);
+  ASSERT_TRUE(result);
+}
+
+TEST(borisov_lab2, test_create_empty_calc) {
+  calculator calc;
+  ASSERT_EQ(calc.get_value(), "");
+}
+
+TEST(borisov_lab2, test_create_from_string) {
+  calculator calc("1010101");
+  ASSERT_EQ(calc.get_value(), "1010101");
+}
+
+TEST(borisov_lab2, test_operator_eq_calc) {
+  calculator calc("1010101");
+  calc = calculator("2345");
+  ASSERT_EQ(calc.get_value(), "2345");
+}
+
+TEST(borisov_lab2, test_operator_eq_string) {
+  calculator calc("1010101");
+  calc = "2345";
+  ASSERT_EQ(calc.get_value(), "2345");
+}
+
 TEST(borisov_lab2, test_can_convert_bin) {
   std::string test_string = "1010101";
   int result = converter::convert(test_string);
